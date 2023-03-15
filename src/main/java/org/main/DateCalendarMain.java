@@ -12,6 +12,9 @@ import java.time.format.DateTimeFormatter;
 public class DateCalendarMain {
     public static void main(String[] args) {
 
+        DateTimeFormatter fmt1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        DateTimeFormatter fmt2 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+
         LocalDate localDate = LocalDate.now();
         LocalDateTime localDateTime = LocalDateTime.now();
         Instant instant = Instant.now();
@@ -26,6 +29,13 @@ public class DateCalendarMain {
         ZonedDateTime zonedDateTime = ZonedDateTime.parse(strDate, formatter);
         Instant brasiliaTime = zonedDateTime.toInstant();
 
+        LocalDate localDateCustum = LocalDate.parse("20/07/2022", fmt1);
+        LocalDateTime localDateTimeCustum = LocalDateTime.parse("20/07/2022 01:30", fmt2);
+
+        LocalDate dateFull = LocalDate.of(2022,7,20);
+        LocalDateTime dateTimeFull = LocalDateTime.of(2022, 7, 20, 1, 30);
+
+
         System.out.println("Data local: " + localDate);
         System.out.println("Data e Hora local: " + localDateTime);
         System.out.println("Data e Hora local GMT (Londres): " + instant);
@@ -33,6 +43,10 @@ public class DateCalendarMain {
         System.out.println("Data e Hora no formato ISO 8601: " + localDateTimeIso8601);
         System.out.println("Data e Hora local GMT (Londres) no formato ISO 8601: " + instantIso8601);
         System.out.println("Horário de Londres no formato ISO 8601: " + brasiliaTime);
+        System.out.println("Data local customizada: " + localDateCustum);
+        System.out.println("Data local e Hora customizada: " + localDateTimeCustum);
+        System.out.println("Data completa: " + dateFull);
+        System.out.println("Data e Hora completa: " + dateTimeFull);
 
     }
 }
