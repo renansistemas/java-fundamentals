@@ -1,2 +1,5 @@
 # Project exclude paths
 /target/
+
+# Excluir todos os arquivos e pastas dentro do diretório .idea
+.idea/
