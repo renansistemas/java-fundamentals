@@ -1,2 +1,2 @@
 # java-fundamentals
-initial commit with java basic code
+Repositório para treinar fundamentos básicos de Java.
