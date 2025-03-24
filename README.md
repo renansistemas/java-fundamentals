@@ -15,6 +15,9 @@ O projeto está organizado nos seguintes diretórios e arquivos:
 - `src/main/java/org/main/DateOperationsMain.java`: Contém exemplos de operações de data e hora.
 - `src/main/java/org/main/DateCalendarFormatTextMain.java`: Contém exemplos de formatação de data e hora.
 - `src/main/java/org/main/DateCalendarMain.java`: Contém exemplos adicionais de operações de data e hora.
+- `src/main/java/org/fundamental/ContaBancaria.java`: Contém a classe base para contas bancárias.
+- `src/main/java/org/fundamental/ContaCorrente.java`: Contém a classe derivada para contas correntes.
+- `src/main/java/org/fundamental/Main.java`: Contém o ponto de entrada principal para testar as classes de conta bancária.
 - `README.md`: Fornece uma visão geral do projeto.
 
 ## Arquivos
@@ -51,6 +54,23 @@ Este arquivo contém exemplos adicionais de operações de data e hora, incluind
 - Conversão entre diferentes representações de data e hora.
 - Trabalho com `ZonedDateTime` e fusos horários.
 
+### `ContaBancaria.java`
+
+Este arquivo contém a classe base `ContaBancaria`, que representa uma conta bancária genérica. Principais operações incluem:
+
+- Depósito de valores.
+- Saque de valores com verificação de saldo.
+
+### `ContaCorrente.java`
+
+Este arquivo contém a classe derivada `ContaCorrente`, que estende `ContaBancaria` e adiciona suporte a cheque especial. Principais operações incluem:
+
+- Saque de valores permitindo saldo negativo até o limite do cheque especial.
+
+### `Main.java`
+
+Este arquivo contém o ponto de entrada principal para testar as classes de conta bancária. Demonstra a criação de instâncias de `ContaBancaria` e `ContaCorrente` e a realização de operações de saque.
+
 ## Como Executar
 
 1. **Clone o repositório**:
@@ -65,17 +85,25 @@ Este arquivo contém exemplos adicionais de operações de data e hora, incluind
     ```
 
 3. **Execute os exemplos**:
-    - Para executar `DateOperationsMain`:
-        ```sh
-        mvn exec:java -Dexec.mainClass="org.main.DateOperationsMain"
-        ```
-    - Para executar `DateCalendarFormatTextMain`:
-        ```sh
-        mvn exec:java -Dexec.mainClass="org.main.DateCalendarFormatTextMain"
-        ```
-    - Para executar `DateCalendarMain`:
-        ```sh
-        mvn exec:java -Dexec.mainClass="org.main.DateCalendarMain"
-        ```
+   - Para executar `DateOperationsMain`:
+       ```sh
+       mvn exec:java -Dexec.mainClass="org.main.DateOperationsMain"
+       ```
+   - Para executar `DateCalendarFormatTextMain`:
+       ```sh
+       mvn exec:java -Dexec.mainClass="org.main.DateCalendarFormatTextMain"
+       ```
+   - Para executar `DateCalendarMain`:
+       ```sh
+       mvn exec:java -Dexec.mainClass="org.main.DateCalendarMain"
+       ```
+   - Para executar `Main`:
+       ```sh
+       mvn exec:java -Dexec.mainClass="org.fundamental.Main"
+       ```
+
+## Licença
+
+Este projeto está licenciado sob a Licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
 
 Autor: Renan
